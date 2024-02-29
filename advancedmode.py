@@ -7,7 +7,7 @@ from tqdm import tqdm
 import time
 
 # Set your OpenAI API key
-OPENAI_API_TOKEN = "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"
+OPENAI_API_TOKEN = "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"
 print("Setting OpenAI API Key...")
 os.environ["OPENAI_API_KEY"] = OPENAI_API_TOKEN
 
