@@ -6,7 +6,7 @@ import requests
 from tqdm import tqdm
 
 # Set your OpenAI API key
-OPENAI_API_TOKEN = "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"
+OPENAI_API_TOKEN = "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"
 os.environ["OPENAI_API_KEY"] = OPENAI_API_TOKEN
 
 # Initialize the OpenAI client
