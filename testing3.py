@@ -5,7 +5,7 @@ import csv
 from tqdm import tqdm
 
 # Set your OpenAI API key
-OPENAI_API_TOKEN = "JUST_ADD_API_KEY_HERE"
+OPENAI_API_TOKEN = "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"
 os.environ["OPENAI_API_KEY"] = OPENAI_API_TOKEN
 
 # Initialize the OpenAI client
@@ -41,7 +41,7 @@ def wait_for_run_completion(thread_id, run_id, timeout=300):
     raise TimeoutError("Run did not complete within the specified timeout.")
 
 def get_internal_links(thread_id, blog_post_idea):
-    get_request = f"Read the product URLs to find suitable products for articles. Never invent links or product images Choose 5 internal links and 5 product image urls that are relevant to {blog_post_idea}. For example for exotic leather shoes look for crocodile shoes etc. For suit articles look for suits.'."
+    get_request = f"Read the product URLs and titles to find suitable products for articles. Never invent links or product images Choose 5 internal links and 5 product image urls that are relevant to {blog_post_idea}. For example for exotic leather shoes look for crocodile shoes etc. For suit articles look for suits.'."
     client.beta.threads.messages.create(thread_id=thread_id, role="user", content=get_request)
     get_request_run = client.beta.threads.runs.create(thread_id=thread_id, assistant_id=assistant.id)
     wait_for_run_completion(thread_id, get_request_run.id)
